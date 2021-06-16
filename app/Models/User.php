@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use App\Modals\Post;
+use App\Models\Like;
+use App\Models\Dislike;
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -45,5 +49,14 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+    public function dislikes()
+    {
+        return $this->hasMany(Dislike::class);
     }
 }

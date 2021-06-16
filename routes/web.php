@@ -9,6 +9,10 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 
+//Likes
+use App\Http\Controllers\PostLikeController;
+use App\Http\Controllers\PostDislikeController;
+
 //Home Page
 Route::get("/", function() {
     return view("posts/index");
@@ -31,3 +35,12 @@ Route::post("/login", [LoginController::class, "store"]);
 
 //Logout
 Route::post("/logout", [LogoutController::class, "store"])->name("logout");
+
+
+//Likes
+Route::post("/posts/{post}/likes", [PostLikeController::class, "store"])->name("posts.likes");
+Route::delete("/posts/{post}/likes", [PostLikeController::class, "destroy"]);
+
+//Dislikes
+Route::post("/posts/{post}/dislikes", [PostDislikeController::class, "store"])->name("posts.dislikes");
+Route::delete("/posts/{post}/dislikes", [PostDisLikeController::class, "destroy"])->name("posts.dislikes.remove");

@@ -30,19 +30,44 @@
                         <p class="mb-2">{{$post->body}}</p>
 
                         <div class="flex items-center">
-                            <form action="" method="post" class="m-1">
-                                @csrf
-                                <button type="submit">
-                                    <i class="fas fa-thumbs-up"></i>
-                                </button>
-                            </form>
-                            <form action="" method="post" class="m-1">
-                                @csrf
-                                <button type="submit">
-                                    <i class="fas fa-thumbs-down"></i>
-                                </button>
-                            </form>
+                            @if(!$post->likedBy(auth()->user()))
+                                <form action="{{ route('posts.likes', $post->id) }}" method="post" class="m-1">
+                                    @csrf
+                                    <button type="submit">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </button>
+                                </form>
+                            @else
+                                <form action="{{ route('posts.likes', $post) }}" method="post" class="m-1">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit">
+                                        <i class="fas fa-thumbs-up text-purple-500"></i>
+                                    </button>
+                                </form>
+                            @endif
+                                <span class="mr-2">{{$post->likes->count()}}</span>
+
+
+                            @if(!$post->dislikedBy(auth()->user()))
+                                <form action="{{ route('posts.dislikes', $post->id) }}" method="post" class="m-1">
+                                    @csrf
+                                    <button type="submit">
+                                        <i class="fas fa-thumbs-down"></i>
+                                    </button>
+                                </form>
+                            @else
+                                <form action="{{ route('posts.dislikes', $post) }}" method="post" class="m-1">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit">
+                                        <i class="fas fa-thumbs-down text-red-500"></i>
+                                    </button>
+                                </form>
+                            @endif
+                                <span class="mr-2">{{$post->dislikes->count()}}</span>    
                         </div>
+
 
                     </div>
                 @endforeach
