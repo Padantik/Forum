@@ -19,11 +19,6 @@ use App\Http\Controllers\UserAccountController;
 
 
 
-//Home Page
-Route::get("/", function() {
-    return view("posts/index");
-})->name("home");
-
 //Post page
 Route::get('/posts', [PostController::class, "index"])->name("posts");
 Route::post("/posts", [PostController::class, "store"]);
@@ -37,8 +32,8 @@ Route::get("/register", [RegisterController::class, "index"])->name("register");
 Route::post("/register", [RegisterController::class, "store"]);
 
 //Login
-Route::get("/login", [LoginController::class, "index"])->name("login");
-Route::post("/login", [LoginController::class, "store"]);
+Route::get("/", [LoginController::class, "index"])->name("login");
+Route::post("/", [LoginController::class, "store"]);
 
 //Logout
 Route::post("/logout", [LogoutController::class, "store"])->name("logout");

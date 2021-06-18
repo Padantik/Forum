@@ -2,18 +2,14 @@
 
 @section("content")
     <div class="flex justify-center">
-        <div class="md:w-5/12 w-10/12 light-magneta p-6 m-3 rounded-lg text-white">
-
-            <form action="{{route('login')}}" method="post">
+        <div class="login-form bg-purple-50 p-4 rounded-lg text-black shadow-2xl">
+            <form action="{{route('login')}}" class="mb-10 border-b-2" method="post">
             @csrf
-                <div class="flex justify-center">
-                    <h1 class="px-6 py-3 text-xl">Login</h1>
-                </div>
-                <div class="m-4">
+                <div>
                     <label for="username" class="sr-only">Username</label>
                     <input type="text" name="username" id="username" placeholder="Username" class="bg-gray-100 border-2 w-full p-4 rounded @error('username') border-red-500 @enderror" value="">
                 </div>
-                <div class="m-4">
+                <div class="my-4">
                     <label for="password" class="sr-only">Password</label>
                     <input type="password" name="password" id="password" placeholder="Choose a password" class="bg-gray-100 border-2 w-full p-4 rounded @error('password') border-red-500 @enderror" value="">
                     @if(session("status"))
@@ -23,16 +19,22 @@
                     @endif
                 </div>
 
-                <div class="m-4">
+                <div class="my-4">
                     <div class="flex items-center">
                         <input type="checkbox" name="remember" id="remember" class="m-2">
                         <label for="remember">Remember me</label>
                     </div>
                 </div>
-                <div class="m-4">
-                    <button type="submit" class="magneta text-white px-4 py-3 rounded font-medium w-full">Login</button>
+                <div class="my-4">
+                    <button type="submit" class="magneta text-white px-4 py-3 rounded font-medium w-full magneta-button">Log In</button>
+                </div>
+                <div class="text-center my-4 text-sm">
+                    <a href="#">Forgotten Password?</a>
                 </div>
             </form>
-        </div>    
+            <div class="w-full my-4 text-center">
+                <a href="{{ route('register') }}" class="text-white magneta p-3 rounded font-medium magneta-button">Create New Account</a>
+            </div>  
+        </div> 
     </div>
 @endsection

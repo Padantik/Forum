@@ -20,12 +20,17 @@ class RegisterController extends Controller
     }
     public function store(Request $request) 
     {
+
+        if($request->get("gender") != "Male")
+
         //Validate Request
         $this->validate($request, [
             'name' => ["required","max:255"],
             'username' => ["required","max:255"],
             'email' => ["required", "email", "max:255"],
-            'password' => ["required","confirmed"]
+            'password' => ["required","confirmed"],
+            'birthday' => ["required","confirmed"],
+            'gender' => ["required","confirmed"]
         ]);
 
         //Store User
@@ -33,9 +38,10 @@ class RegisterController extends Controller
             'name'=> $request->name,
             'username'=> $request->username,
             'email'=> $request->email,
-            'password'=> Hash::make($request->password)
+            'password'=> Hash::make($request->password),
+            "email_verification" => false
         ]);
-
+        
         //Sign user in
         auth()->attempt($request->only("email", "password"));
 
