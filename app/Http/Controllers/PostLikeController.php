@@ -17,6 +17,10 @@ class PostLikeController extends Controller
         if($post->likedBy($request->user())) {
             return response(null, 409);
         };
+        
+        if($post->dislikedBy($request->user())) {
+            $request->user()->dislikes()->where("post_id", $post->id)->delete();
+        };
 
         $post->likes()->create([
             'user_id'=> $request->user()->id

@@ -1,12 +1,12 @@
 @extends("layouts.app")
 
 @section("content")
-    <div class="flex justify-center">
-        <div class="md:w-5/12 w-10/12 bg-white p-6 rounded-lg">
+    <div class="flex justify-center items-center text-white">
+        <div class="md:w-5/12 w-10/12 light-magneta p-6 m-2 rounded-lg">
             <form action="{{route('register')}}" method="post">
             @csrf
                 <div class="flex justify-center">
-                    <h1 class="px-6 py-3 font-big">New User?</h1>
+                    <h1 class="px-6 py-3 text-xl">New User?</h1>
                 </div>
                 <div class="m-4">
                     <label for="name" class="sr-only">Name</label>
@@ -49,7 +49,7 @@
                     <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Repeat your password" class="bg-gray-100 border-2 w-full p-4 rounded @error('password_confirmation') border-red-500 @enderror" value="">
                 </div>
                 <div class="m-4">
-                    <button type="submit" class="bg-purple-500 text-white px-4 py-3 rounded font-medium w-full">Register</button>
+                    <button type="submit" class="magneta text-white px-4 py-3 rounded font-medium w-full">Register</button>
                 </div>
             </form>
         </div>    

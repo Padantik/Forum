@@ -2,12 +2,12 @@
 
 @section("content")
     <div class="flex justify-center">
-        <div class="md:w-5/12 w-10/12 bg-white p-6 rounded-lg">
+        <div class="md:w-5/12 w-10/12 light-magneta p-6 m-3 rounded-lg text-white">
 
             <form action="{{route('login')}}" method="post">
             @csrf
                 <div class="flex justify-center">
-                    <h1 class="px-6 py-3 font-big">Login</h1>
+                    <h1 class="px-6 py-3 text-xl">Login</h1>
                 </div>
                 <div class="m-4">
                     <label for="username" class="sr-only">Username</label>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="m-4">
-                    <button type="submit" class="bg-purple-500 text-white px-4 py-3 rounded font-medium w-full">Login</button>
+                    <button type="submit" class="magneta text-white px-4 py-3 rounded font-medium w-full">Login</button>
                 </div>
             </form>
         </div>    

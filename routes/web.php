@@ -13,6 +13,12 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\PostDislikeController;
 
+//User
+use App\Http\Controllers\UserPostController;
+use App\Http\Controllers\UserAccountController;
+
+
+
 //Home Page
 Route::get("/", function() {
     return view("posts/index");
@@ -21,6 +27,7 @@ Route::get("/", function() {
 //Post page
 Route::get('/posts', [PostController::class, "index"])->name("posts");
 Route::post("/posts", [PostController::class, "store"]);
+Route::delete("/posts/{post}", [PostController::class, "destroy"])->name("posts.destroy");
 
 //Dashboard Page
 Route::get("/dashboard", [DashboardController::class, "index"])->name("dashboard");
@@ -44,3 +51,11 @@ Route::delete("/posts/{post}/likes", [PostLikeController::class, "destroy"]);
 //Dislikes
 Route::post("/posts/{post}/dislikes", [PostDislikeController::class, "store"])->name("posts.dislikes");
 Route::delete("/posts/{post}/dislikes", [PostDisLikeController::class, "destroy"])->name("posts.dislikes.remove");
+
+
+//User Posts
+Route::get("/users/{user}/posts", [UserPostController::class, "index"])->name("user.posts");
+
+
+//Account Page
+Route::get("/users/{user}", [UserAccountController::class, "index"])->name("user.account");

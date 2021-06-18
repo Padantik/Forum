@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Playfair+Display+SC&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #361738;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #49314b;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #49314b;
+  }
+
+
+.magneta {
+    background-color: #361738;
+}
+
+.light-magneta {
+    background-color: #49314b;
+}
+
+.playFair {
+    font-family: 'Playfair Display SC', serif;
+}
+
+.nixie {
+    font-family: 'Nixie One', serif;
+}
+
+.browny-red {
+    background-color: #7A585E;
+}

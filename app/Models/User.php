@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-use App\Modals\Post;
+use App\Models\Post;
 use App\Models\Like;
 use App\Models\Dislike;
 
