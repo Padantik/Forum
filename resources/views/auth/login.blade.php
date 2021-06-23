@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="flex justify-center">
-        <div class="login-form bg-purple-50 p-4 rounded-lg text-black shadow-2xl">
+        <div class="login-form bg-purple-100 md:bg-purple-50 p-4 rounded-lg text-black md:shadow-2xl">
             <form action="{{route('login')}}" class="mb-10 border-b-2" method="post">
             @csrf
                 <div>
@@ -21,7 +21,7 @@
 
                 <div class="my-4">
                     <div class="flex items-center">
-                        <input type="checkbox" name="remember" id="remember" class="m-2">
+                        <input type="checkbox" name="remember" id="remember" class="m-2 magneta">
                         <label for="remember">Remember me</label>
                     </div>
                 </div>

@@ -15,10 +15,11 @@ class UserAccountController extends Controller
         $this->middleware(['auth']);
     }
 
-    public function index(User $user)
+    public function index(User $user, Request $request)
     {   
+
         if(auth()->user()->id != $user->id) {
-            return back();
+            return view("posts.dashboard");
         }
         
 

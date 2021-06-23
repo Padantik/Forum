@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&family=Quicksand:wght@300;400&display=swap');
 
-* {
+body {
   font-family: 'Oxygen', sans-serif !important;
 }
 
@@ -50,5 +50,5 @@
 
 .magneta-button:hover {
   transition: 0.35s;
-  background-color: #524852;
+  background-color: #491b4d;
 }

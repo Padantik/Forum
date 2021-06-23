@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="flex justify-center">
-        <div class="login-form bg-purple-50 p-4 rounded-lg text-black shadow-2xl">
+        <div class="login-form  bg-purple-100 md:bg-purple-50 p-4 rounded-lg text-black md:shadow-2xl">
             <form action="{{route('register')}}" class="mb-6 border-b-2" method="post">
             @csrf
                 <div>
@@ -16,18 +16,6 @@
                 <div class="my-4">
                     <label for="email" class="sr-only">Email</label>
                     <input type="text" name="email" id="email" placeholder="Your email" class="bg-gray-100 border-2 w-full p-4 rounded @error('email') border-red-500 @enderror" value="{{old('email')}}">
-                </div>
-
-                <div class="w-full flex">
-                    <div class="inline-flex w-6/12 mr-1">
-                        <label for="birthdate" class="sr-only">Birthday</label>
-                        <input type="date" name="birthdate" id="birthdate" placeholder="Birthday" class="bg-gray-100 border-2 w-full p-4 rounded @error('birthdate') border-red-500 @enderror" value="">
-                    </div>
-
-                    <div class="inline-flex w-6/12 ml-1">
-                        <label for="gender" class="sr-only">Gender</label>
-                        <input type="text" name="gender" id="gender" placeholder="Your Gender" class="bg-gray-100 border-2 w-full p-4 rounded @error('gender') border-red-500 @enderror" value="{{old('email')}}">                            
-                    </div>
                 </div>
 
                 <div class="my-4">
