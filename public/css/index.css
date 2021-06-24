@@ -7,18 +7,19 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
-    border-radius: 10px;
+    height: 10px;
+    border-radius: 100px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #361738;
+    background: #bbbbbb;
     border-radius: 10px;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #49314b;
+    background: #838383;
     border-radius: 10px;
   }
   

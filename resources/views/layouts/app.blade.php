@@ -26,7 +26,7 @@
                         <i class="fas fa-user-circle text-9xl border-b-2 px-4 py-3"></i>                   
                         <div>
                             <a href="{{ route('user.account', auth()->user()) }}" class="text-center">
-                                <p href="{{ route('user.account', auth()->user()) }}" class="text-3xl break-words py-3">{{ auth()->user()->username }}</p>
+                                <p href="{{ route('user.account', auth()->user()) }}" class="text-3xl break-words py-3 hover:text-gray-300">{{ auth()->user()->username }}</p>
                             </a>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="w-full">
                         <a href="{{route('posts')}}">
-                                <p class="text-xl magneta-button w-full px-3 py-4">Posts</p>
+                                <p class="text-xl magneta-button w-full px-3 py-4">Chat</p>
                             </a>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                     <div class="w-full text-center text-xl">
                         <form action="{{route('logout')}}" method="post" class="w-full magneta-button"> 
                             @csrf
-                                <button type="submit" class="py-3">Logout</button>
+                                <button type="submit" class="py-3 w-full">Logout</button>
                         </form>
                     </div>
 
