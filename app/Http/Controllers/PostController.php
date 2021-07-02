@@ -14,21 +14,8 @@ class PostController extends Controller
 
     public function index()
     {   
-        $posts = Post::get();
-        switch($posts) {
-            case $posts->count() <= 10:
-                $posts = Post::with(["user", "likes"])->orderby("created_at", "desc")->paginate(5);
-                break;
-            case $posts->count() <= 20:
-                $posts = Post::with(["user", "likes"])->orderby("created_at", "desc")->paginate(10);
-                break;
-            case $posts->count() <= 40:
-                $posts = Post::with(["user", "likes"])->orderby("created_at", "desc")->paginate(20);
-                break;        
-            default:                       
-                $posts = Post::with(["user", "likes"])->orderby("created_at", "desc")->paginate(25);
-        }
-
+        $posts = Post::paginate(7);
+    
 
         return view("posts.posts", [
             "posts" => $posts

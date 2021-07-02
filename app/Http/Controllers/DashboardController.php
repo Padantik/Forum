@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class DashboardController extends Controller
 {
@@ -13,6 +14,16 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view("posts/dashboard");
+        $data = json_decode(Http::get("https://newsapi.org/v2/top-headlines?country=GB&apiKey=e61c8b190651435086563c2d1bf5e34e")->body())->articles;
+        $result = [];
+        foreach($data as $article) {
+            if($article->urlToImage != null) {
+                array_push($result, $article);
+            };
+        };
+        
+        return view("posts/dashboard", [
+            "articles" => $result
+        ]);
     }
 }

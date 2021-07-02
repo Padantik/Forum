@@ -12,7 +12,7 @@ class LoginController extends Controller
         $this->middleware(["guest"]);
     }
 
-    public function index() 
+    public function index(Request $request) 
     {
         return view('auth.login');
     }

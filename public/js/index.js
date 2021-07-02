@@ -6,14 +6,14 @@ $(() => {
 
     $("#body").on("keydown", () => {
         let characterCount = $("#body").val().length
-        $("#remainingCharacters").html(`${250 - characterCount} remaining`)
+        $("#remainingCharacters").html(`${150 - characterCount}/150`)
     })
 
-    
 
     $('#body').on("keypress", key => {
-        if(key.keyCode == 13) {
-            //key.preventDefault()
+        if(key.which == 13 && $.trim($("#body").val()) != "") {
+            key.preventDefault()
+            $("#comment-form").submit();
         }
     })
 

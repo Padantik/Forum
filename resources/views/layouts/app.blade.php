@@ -35,12 +35,12 @@
                     <div class="border-b border-t">
                         <div class="w-full">
                             <a href="{{route('dashboard')}}"  class="w-full text-left ">
-                                <p class="text-xl magneta-button w-full px-3 py-4">Dashboard</p> 
+                                <p class="text-xl magneta-button w-full px-3 py-4"><i class="fas fa-home"></i> Home</p> 
                             </a>
                         </div>
                         <div class="w-full">
                         <a href="{{route('posts')}}">
-                                <p class="text-xl magneta-button w-full px-3 py-4">Chat</p>
+                                <p class="text-xl magneta-button w-full px-3 py-4"><i class="fas fa-comment"></i> Chat</p>
                             </a>
                         </div>
                     </div>
@@ -59,6 +59,17 @@
             </div>
             <div class="flex-1 overflow-y-scroll h-screen bg-purple-100 font-serif">
                 @yield("content")
+            </div>
+            
+            <div class="light-magneta w-64 h-screen relative text-white">
+                <div class="magneta my-6 mx-4 px-4 py-2">
+                    <div class="text-center">
+                        <p href="{{ route('user.account', auth()->user()) }}" class="text-2xl py-3">Users</p>
+                    </div>
+                    <div class="w-full">
+                        <p class="text-xl magneta-button w-full px-3 py-4"><i class="fas fa-user"></i></p> 
+                    </div>
+                </div>
             </div>
         </div>
 

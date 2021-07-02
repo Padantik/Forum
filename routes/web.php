@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 //Imports Controllers
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;

@@ -1,9 +1,10 @@
 <div>
     <!--Post Body-->
-    <div class="mb-4 w-full bg-gray-100 p-1 rounded border">
-            <div class="mr-2 mb-2 inline">
-                <i class="fas fa-user-circle text-2xl"></i>
-            </div>
+    <div class="my-4 w-full p-2">
+        <div class="inline-block">
+            <i class="fas fa-user-circle text-2xl"></i>
+        </div>
+        <div class="border inline ml-2">
             <!--Post Creator-->
             <a href="{{ route('user.posts', $post->user) }}" class="font-bold">{{ $post->user->username}}</a>
 
@@ -66,4 +67,5 @@
                     <span class="mr-2">{{$post->dislikes->count()}}</span>    
                 </div>
         </div>
+    </div>
 </div>
