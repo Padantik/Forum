@@ -21,10 +21,18 @@ class UserAccountController extends Controller
         if(auth()->user()->id != $user->id) {
             return view("posts.dashboard");
         }
-        
+              
+        $users = User::get();
+        $userResults = [];
+        foreach($users as $user) {
+            if($request->user()->id != $user->id) {
+                array_push($userResults, $user);
+            }
+        };
 
         return view("users.useraccount", [
             "user" => $user,
+            "users" => $userResults
         ]);
     }
 }

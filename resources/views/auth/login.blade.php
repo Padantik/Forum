@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="flex justify-center">
-        <div class="login-form bg-purple-100 md:bg-purple-50 p-4 rounded-lg text-black md:shadow-2xl">
+        <div class="login-form bg-gray-100 md:bg-gray-50 p-4 rounded-lg text-black md:shadow-2xl">
             <form action="{{route('login')}}" class="mb-10 border-b-2" method="post">
             @csrf
                 <div>
@@ -21,19 +21,19 @@
 
                 <div class="my-4">
                     <div class="flex items-center">
-                        <input type="checkbox" name="remember" id="remember" class="m-2 magneta">
+                        <input type="checkbox" name="remember" id="remember" class="m-2">
                         <label for="remember">Remember me</label>
                     </div>
                 </div>
                 <div class="my-4">
-                    <button type="submit" class="magneta text-white px-4 py-3 rounded font-medium w-full magneta-button">Log In</button>
+                    <button type="submit" class="text-white px-4 py-3 rounded font-medium w-full bg-black hover:bg-gray-800">Log In</button>
                 </div>
                 <div class="text-center my-4 text-sm">
                     <a href="#">Forgotten Password?</a>
                 </div>
             </form>
             <div class="w-full my-4 text-center">
-                <a href="{{ route('register') }}" class="text-white magneta p-3 rounded font-medium magneta-button">Create New Account</a>
+                <a href="{{ route('register') }}" class="p-3 rounded font-medium ">Create New Account</a>
             </div>  
         </div> 
     </div>

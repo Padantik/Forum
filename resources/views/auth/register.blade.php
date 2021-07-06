@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="flex justify-center">
-        <div class="login-form  bg-purple-100 md:bg-purple-50 p-4 rounded-lg text-black md:shadow-2xl">
+        <div class="login-form bg-gray-100 md:bg-gray-50 p-4 rounded-lg text-black md:shadow-2xl">
             <form action="{{route('register')}}" class="mb-6 border-b-2" method="post">
             @csrf
                 <div>
@@ -27,7 +27,7 @@
                     <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Repeat your password" class="bg-gray-100 border-2 w-full p-4 rounded @error('password_confirmation') border-red-500 @enderror" value="">
                 </div>
                 <div class="my-4 pb-2">
-                    <button type="submit" class="magneta text-white px-4 py-3 rounded font-medium w-full magneta-button">Register</button>
+                    <button type="submit" class="text-white px-4 py-3 rounded font-medium w-full bg-black hover:bg-gray-800">Register</button>
                 </div>
             </form>
             <div class="w-full my-2 text-center">

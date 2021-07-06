@@ -11,10 +11,16 @@ $(() => {
 
 
     $('#body').on("keypress", key => {
-        if(key.which == 13 && $.trim($("#body").val()) != "") {
-            key.preventDefault()
-            $("#comment-form").submit();
+        if(key.which == 13) {
+            if($.trim($("#body").val()) != "") {
+                key.preventDefault()
+                $("#comment-form").submit();
+            }
         }
     })
+
+    document.getElementById("post-display").scrollTo(0,document.getElementById("post-display").scrollHeight);
+
+
 
 })

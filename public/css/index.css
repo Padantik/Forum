@@ -29,27 +29,14 @@ body {
   }
 
 
-.magneta {
-    background-color: #361738;
-}
-
-.light-magneta {
-    background-color: #49314b;
-}
-
-.browny-red {
-    background-color: #7A585E;
-}
-
 .login-Form {
   width:396px;
 }
 
-.magneta-button {
-  transition: 0.35s;
+.invert-background a:nth-child(even) div {
+  background-color: #1F2937;
 }
 
-.magneta-button:hover {
-  transition: 0.35s;
-  background-color: #491b4d;
+.invert-background a:nth-child(even) div:hover {
+  background-color: #374151;
 }
