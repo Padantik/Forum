@@ -18,19 +18,19 @@
     <div class="flex w-full my-0 relative">
         <div class="mx-9 flex md:text-sm text-xs">
             <div class="mx-1">
-                <p class="text-gray-400 text-sm ml-2">{{  substr($sidebarpost->created_at->diffForHumans(), 0 , strpos($sidebarpost->created_at->diffForHumans(), " ") + 2)  }}</p>
+                <p class="text-gray-400 text-sm ml-2" title="{{$sidebarpost->created_at->diffForHumans()}}">{{  substr($sidebarpost->created_at->diffForHumans(), 0 , strpos($sidebarpost->created_at->diffForHumans(), " ") + 2)  }}</p>
             </div>
             <div class="absolute top-0 right-0 text-xs mx-2">
                 @if(!$sidebarpost->likedBy(auth()->user()))
                     <span><i class="fas fa-thumbs-up"></i> {{$sidebarpost->likes->count()}}</span>
                 @else
-                    <span><i class="fas fa-thumbs-up text-green-400"></i> {{$sidebarpost->likes->count()}}</span>
+                    <span><i class="fas fa-thumbs-up text-green-400" title="Liked by You"></i> {{$sidebarpost->likes->count()}}</span>
                 @endif
 
                 @if(!$sidebarpost->dislikedBy(auth()->user()))
                     <span><i class="fas fa-thumbs-down"></i> {{$sidebarpost->dislikes->count()}}</span>
                 @else
-                    <span><i class="fas fa-thumbs-down text-red-400"></i> {{$sidebarpost->dislikes->count()}}</span>
+                    <span><i class="fas fa-thumbs-down text-red-400" title="Disliked by You"></i> {{$sidebarpost->dislikes->count()}}</span>
                 @endif
             </div>
         </div>

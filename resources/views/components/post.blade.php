@@ -68,7 +68,7 @@
             </div>
             <p>&#183;</p>
             <div class="mx-1">
-                <p class="text-gray-400 text-sm ml-2">{{  substr($post->created_at->diffForHumans(), 0 , strpos($post->created_at->diffForHumans(), " ") + 2)  }}</p>
+                <p class="text-gray-400 text-sm ml-2" title="{{$post->created_at->diffForHumans()}}">{{  substr($post->created_at->diffForHumans(), 0 , strpos($post->created_at->diffForHumans(), " ") + 2)  }}</p>
             </div>
             <div class="absolute top-0 right-0 text-xs mx-2">
                 <span><i class="fas fa-thumbs-up"></i> {{$post->likes->count()}}</span>
