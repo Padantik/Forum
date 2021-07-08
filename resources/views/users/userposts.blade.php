@@ -8,7 +8,7 @@
             </div>
             <div class="mb-2" >
                 @if ($posts)           
-                    <div class="overflow-y-scroll flex-row-reverse h-5/6" id="post-display">
+                    <div class="overflow-y-scroll flex-row-reverse h-5/6">
                         @foreach( ($posts) as $post)
                             <x-post :post="$post" />
                         @endforeach

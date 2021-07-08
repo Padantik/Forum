@@ -5,10 +5,10 @@
         <div class="md:w-10/12 w-full bg-gray-900 px-3 pb-10 pt-3 rounded-lg h-screen">
         <!--Renders Posts-->
             <div class="mb-2 py-2">
-                @if ($posts->count()) 
+                @if ($posts) 
                 
                     <div class="overflow-y-scroll h-5/6" id="post-display">
-                        @foreach( ($posts) as $post)
+                        @foreach($posts as $post)
                             <x-post :post="$post" />
                         @endforeach
                     </div>
@@ -36,4 +36,53 @@
     </div>
 @endsection
 
+@section("sidebarContent")
+
+    <div class="p-3">
+        <div class="bg-gray-800 rounded-lg py-4 px-1">
+            <div class="text-center mb-3">
+                <h1 class="text-2xl">Recent Activity</h1>
+            </div>
+            <div class="inline-flex w-full">
+                <x-side-bar-post :sidebarpost="end($posts)" />
+            </div>
+        </div>
+    </div>
+    
+
+    @foreach($posts as $post)
+
+        @if(count(max(array_column($posts, 'likes'))))
+            @if(max(array_column($posts, 'likes'))[0]->post_id == $post->id)
+                <div class="p-3">
+                    <div class="bg-gray-800 rounded-lg py-4 px-1">
+                        <div class="text-center mb-3">
+                            <h1 class="text-2xl">Liked Comment</h1>
+                        </div>
+                        <div class="inline-flex w-full">
+                            <x-side-bar-post :sidebarpost="$post" />
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endif
+        
+        @if(count(max(array_column($posts, 'dislikes'))))
+            @if(max(array_column($posts, 'dislikes'))[0]->post_id == $post->id)
+                <div class="p-3">
+                    <div class="bg-gray-800 rounded-lg py-4 px-1">
+                        <div class="text-center mb-3">
+                            <h1 class="text-2xl">Disliked Comment</h1>
+                        </div>
+                        <div class="inline-flex w-full">
+                            <x-side-bar-post :sidebarpost="$post" />
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endif
+
+    @endforeach
+  
+@endsection
 

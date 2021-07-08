@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="flex justify-center">
-        <div class="md:w-10/12 w-full bg-gray-900 p-6 rounded-lg">
+        <div class="md:w-10/12 w-full bg-gray-900 p-6 rounded-lg md:grid md:grid-cols-2 md:gap-4">
             @foreach($articles as $article)
 
                 <div class="w-full h-auto my-5 rounded-xl bg-black text-white">
@@ -21,7 +21,7 @@
                             <div>
                                 <img src="{{trim(json_encode($article->urlToImage), '"' )}}" onerror="this.onerror=null; this.src='{{asset('images/hello.png')}}'" class="w-full">
                             </div>
-                            <div class="bg-gray-900 rounded-b-xl p-3 text-xl">
+                            <div class="rounded-b-xl p-3 text-xl">
                                 <h1>{{ trim(json_encode($article->title), '"') }}</h1>
                             </div>
                         </div>

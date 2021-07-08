@@ -23,7 +23,6 @@ class DashboardController extends Controller
             }
         };
 
-
         $data = json_decode(Http::get("https://newsapi.org/v2/top-headlines?country=GB&apiKey=e61c8b190651435086563c2d1bf5e34e")->body())->articles;
         $result = [];
         foreach($data as $article) {
@@ -31,6 +30,7 @@ class DashboardController extends Controller
                 array_push($result, $article);
             };
         };
+        shuffle($result);
         
         return view("posts/dashboard", [
             "articles" => $result,

@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="flex justify-center">
-        <div class="login-form bg-gray-100 md:bg-gray-50 p-4 rounded-lg text-black md:shadow-2xl">
+        <div class="login-form bg-white md:bg-gray-50 p-4 rounded-lg text-black shadow-2xl">
             <form action="{{route('register')}}" class="mb-6 border-b-2" method="post">
             @csrf
                 <div>
@@ -31,7 +31,7 @@
                 </div>
             </form>
             <div class="w-full my-2 text-center">
-                <a href="{{ route('login') }}" class="text-center text-sm">Already Registered?</a>
+                <a href="{{ route('login') }}" class="text-sm hover:text-gray-500">Already Registered?</a>
             </div>
         </div>    
     </div>

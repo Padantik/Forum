@@ -17,10 +17,10 @@
 
         <!--For Desktops-->
         <div class="hidden md:relative md:min-h-screen md:flex">
+            <!-- Sidebar -->
             <div class="bg-gray-900 lg:w-2/12 md:w-3/12 h-screen relative text-white">
-
                 <nav class="bg-gray-900 my-2 py-2">
-                
+
                     <!--Personal-->
                     <div class="text-center">
                         <i class="fas fa-user-circle text-9xl py-3"></i>                   
@@ -54,16 +54,18 @@
                     </div>
 
                 </nav>
-
-
             </div>
+
+            <!--Actual Content-->
             <div class="flex-1 overflow-y-scroll h-screen font-serif">
                 @yield("content")
             </div>
-            
-            <div class="bg-gray-900 lg:w-2/12 md:w-3/12 h-screen relative text-white">
+
+            <!-- Sidebar content -->
+            <div class="bg-gray-900 lg:w-2/12 md:w-3/12 h-screen relative text-white hidden lg:inline">
                 @yield("sidebarContent")
             </div>
+            
         </div>
 
         <!--Mobile-->
