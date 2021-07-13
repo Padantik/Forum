@@ -70,10 +70,10 @@
 
         <!--Mobile-->
         <div class="flex relative min-h md:hidden">
-            <div class="w-full">
+            <div class="w-full" style="height:90%">
                 @yield("content")
             </div>
-            <div class="fixed bottom-0 inset-x-0 w-full text-white flex text-center bg-black">
+            <div class="fixed bottom-0 inset-x-0 w-full text-white flex text-center bg-black" style="height:10%">
                 <a href="{{route('dashboard')}}" class="w-3/12 py-4 ">
                     <i class="fas fa-home"></i>
                     <p>Home</p>

@@ -1,10 +1,11 @@
 @extends("layouts.app")
 
 @section("content")
-    <div class="flex justify-center text-white">
+    <!--Desktop View-->
+    <div class="justify-center text-white flex">
         <div class="md:w-10/12 w-full bg-gray-900 px-3 pb-10 pt-3 rounded-lg h-screen">
         <!--Renders Posts-->
-            <div class="mb-2 py-2">
+            <div class="mb-1 py-1">
                 @if ($posts) 
                 
                     <div class="overflow-y-scroll h-5/6" id="post-display">
@@ -18,19 +19,19 @@
                 </div>
                 @endif
             </div>
-            <div>
-                <form action="{{route('posts')}}" method="post" id="comment-form">
+            <div class="h-1/6 mb-2">
+                <form action="{{route('posts')}}" method="post" id="comment-form" class="inline">
                 @csrf
-                    <div class="mb-2">
+                    <div class="mb-2 flex">
                         <label for="body" class="sr-only">Body</label>
-                        <textarea name="body" id="body" cols="30" rows="1" class="bg-gray-100 border-2 w-full p-2 rounded-full resize-none bg-gray-200 text-black focus:outline-none" placeholder="Write a comment..." maxlength="150"></textarea>
+                        <textarea name="body" id="body" cols="30" rows="1" class="body bg-gray-100 border-2 w-10/12 md:w-full p-2 rounded-md resize-none bg-gray-200 text-black focus:outline-none" placeholder="Write a comment..." maxlength="200"></textarea>
+                        <div class="w-2/12 text-center inline-flex md:hidden">
+                            <button type="submit" class="text-center w-full h-full">    
+                                <i class="fas fa-paper-plane text-3xl"></i>
+                            </button>
+                        </div>
                     </div>
                 </form>
-                <div class="w-full block">
-                    <div class="float-right p-2.5 bg-gray-800 rounded-lg">
-                        <p id="remainingCharacters">150/150</p>
-                    </div>
-                </div>
             </div>
         </div>    
     </div>

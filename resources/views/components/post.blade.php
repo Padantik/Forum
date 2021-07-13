@@ -11,7 +11,9 @@
                 <a href="{{ route('user.posts', $post->user) }}" title="{{ $post->user->username }}'s activity">
                     <h1 class="text-xl font-medium table-cell hover:opacity-50">{{ $post->user->username }}</h1>
                 </a>
-                <p class="text-sm px-1 break-words w-full">{{ $post->body }}</p>
+                <div class="w-full">
+                    <p class="text-sm px-1 break-all">{{ $post->body }}</p>
+                </div>
             </div>
         </div>
     </div>

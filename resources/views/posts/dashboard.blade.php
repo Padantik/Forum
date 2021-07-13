@@ -21,8 +21,8 @@
                             <div>
                                 <img src="{{trim(json_encode($article->urlToImage), '"' )}}" onerror="this.onerror=null; this.src='{{asset('images/hello.png')}}'" class="w-full">
                             </div>
-                            <div class="rounded-b-xl p-3 text-xl">
-                                <h1>{{ trim(json_encode($article->title), '"') }}</h1>
+                            <div class="rounded-b-xl p-3">
+                                <h1 class="text-md sm:text-xl">{{ trim(json_encode($article->title), '"') }}</h1>
                             </div>
                         </div>
                     </a>

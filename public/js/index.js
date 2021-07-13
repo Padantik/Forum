@@ -4,13 +4,8 @@ $(() => {
     })
 
 
-    $("#body").on("keydown", () => {
-        let characterCount = $("#body").val().length
-        $("#remainingCharacters").html(`${150 - characterCount}/150`)
-    })
 
-
-    $('#body').on("keypress", key => {
+    $('.body').on("keydown", key => {
         if(key.which == 13) {
             if($.trim($("#body").val()) != "") {
                 key.preventDefault()
@@ -21,6 +16,10 @@ $(() => {
 
     document.getElementById("post-display").scrollTo(0,document.getElementById("post-display").scrollHeight);
 
-
+    $("textarea").on("keypress", function(e) {
+        while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
+            $(this).height($(this).height()+1);
+        };
+    });
 
 })
