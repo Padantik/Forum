@@ -39,47 +39,20 @@
 
 @section("sidebarContent")
 
-    <div class="p-3">
-        <div class="bg-gray-800 rounded-lg py-4 px-1">
-            <div class="text-center mb-3">
-                <h1 class="text-xl">Recent Comments</h1>
-            </div>
-            <div class="inline-flex w-full">
-                <x-side-bar-post :sidebarpost="end($posts)" />
-            </div>
-        </div>
-    </div>
     
+    <x-side-bar-post :sidebarpost="end($posts)" :sidebarpostheader="'Recent Comments'"/>
 
     @foreach($posts as $post)
 
         @if(count(max(array_column($posts, 'likes'))))
             @if(max(array_column($posts, 'likes'))[0]->post_id == $post->id)
-                <div class="p-3">
-                    <div class="bg-gray-800 rounded-lg py-4 px-1">
-                        <div class="text-center mb-3">
-                            <h1 class="text-xl">Liked Comment</h1>
-                        </div>
-                        <div class="inline-flex w-full">
-                            <x-side-bar-post :sidebarpost="$post" />
-                        </div>
-                    </div>
-                </div>
+                <x-side-bar-post :sidebarpost="$post" :sidebarpostheader="'Liked Comment'"/>
             @endif
         @endif
         
         @if(count(max(array_column($posts, 'dislikes'))))
             @if(max(array_column($posts, 'dislikes'))[0]->post_id == $post->id)
-                <div class="p-3">
-                    <div class="bg-gray-800 rounded-lg py-4 px-1">
-                        <div class="text-center mb-3">
-                            <h1 class="text-xl">Disliked Comment</h1>
-                        </div>
-                        <div class="inline-flex w-full">
-                            <x-side-bar-post :sidebarpost="$post" />
-                        </div>
-                    </div>
-                </div>
+                <x-side-bar-post :sidebarpost="$post" :sidebarpostheader="'Disliked Comment'"/>
             @endif
         @endif
 

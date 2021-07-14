@@ -21,14 +21,5 @@
 @endsection
 
 @section("sidebarContent")
-    <div class="border-b">
-        <h1 class="text-2xl py-3 word-wrap">Contacts</h1>
-    </div>
-    <div class="w-full">
-        @foreach($users as $user)
-        <a href="{{ route('user.posts', $user->id) }}">
-            <p class="text-xl magneta-button w-full py-4"><i class="fas fa-user-circle mr-2"></i> {{$user->name}}</p> 
-        </a>
-        @endforeach
-    </div>
+    
 @endsection

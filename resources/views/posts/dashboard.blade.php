@@ -33,19 +33,5 @@
 @endsection
 
 @section("sidebarContent")
-    <div>
-        <div class="border-b">
-            <h1 class="text-2xl py-3 px-2 word-wrap text-right bg-gray-800">Contacts</h1>
-        </div>
-        <div class="w-full invert-background">
-            @foreach($users as $user)
-            <a href="{{ route('user.posts', $user->id) }}">  
-                <div class="w-full py-4 px-2 inline-block hover:bg-gray-700">
-                    <i class="fas fa-user-circle mr-2 text-left text-2xl"></i>
-                    <p class="inline float-right text-xl">{{$user->name}}</p> 
-                </div>
-            </a>
-            @endforeach
-        </div>
-    </div>
+    <x-side-bar-user />
 @endsection

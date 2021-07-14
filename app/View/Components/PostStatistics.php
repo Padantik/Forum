@@ -4,20 +4,22 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class SideBarPost extends Component
+class PostStatistics extends Component
 {
 
-    public $sidebarpost;
-    public $sidebarpostheader;
+    public $poststatistics;
+    public $action;
+    public $type;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($sidebarpost, $sidebarpostheader)
+    public function __construct($poststatistics, $action, $type)
     {
-        $this->sidebarpost = $sidebarpost;
-        $this->sidebarpostheader = $sidebarpostheader;
+        $this->poststatistics = $poststatistics;
+        $this->action = $action;
+        $this->type = $type;
     }
 
     /**
@@ -27,6 +29,6 @@ class SideBarPost extends Component
      */
     public function render()
     {
-        return view('components.side-bar-post');
+        return view('components.post-statistics');
     }
 }
